@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>jquery对话框美化插件 PopWindow</title>
+		<link rel="stylesheet" type="text/css" href="css/popWindow.css"/>
+		<script src="js/jquery-1.9.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/popWindow.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				$("#btn1").click(function(){
+					var txt=  "提示信息内容";
+					popWindow.dialog(txt,popWindow.dialog.typeEnum.info);
+				});
+				
+				$("#btn2").click(function(){
+					var txt=  "提示信息框带取消按钮";
+					popWindow.dialog(txt, popWindow.dialog.typeEnum.confirm);
+
+				});
+				
+				$("#btn3").click(function(){
+					var txt=  "警告提示框";
+					popWindow.dialog(txt, popWindow.dialog.typeEnum.warning);
+				});
+				
+				$("#btn4").click(function(){
+					var txt=  "错误提示信息框";
+					popWindow.dialog(txt, popWindow.dialog.typeEnum.error);
+				});
+				
+				$("#btn5").click(function(){
+					var txt=  "正确提示信息框";
+					popWindow.dialog(txt, popWindow.dialog.typeEnum.success);
+				});
+				
+				$("#btn6").click(function(){
+					var txt=  "请输入";
+					popWindow.dialog(txt, popWindow.dialog.typeEnum.input,{
+						onOk:function(v){
+							alert(v);
+						}
+					});
+				});
+				
+				$("#btn7").click(function(){
+					var txt=  "Angel工作室基于jquery弹出框插件";
+					var option = {
+						title: "popWindow",
+						btn: parseInt("0011",2),
+						onOk: function(){
+							alert("确认啦");
+						},
+						onCancel:function(){
+							alert("取消啦");	
+						},
+						onClose:function(){
+							alert("关闭啦");	
+						}
+					}
+					popWindow.dialog(txt, "custom", option);
+				});
+				
+				$("#btn8").click(function(){
+					var txt=  "默认消息框";
+					popWindow.dialog(txt);
+				});
+			});
+		</script>
+	</head>
+	<body>
+    	<br/><br/><br/><br/><br/>
+    	<center>		
+			<div class="myButton" id="btn1">弹窗1(信息)</div>
+			<div class="myButton" id="btn2">弹窗2(提示)</div>
+			<div class="myButton" id="btn3">弹窗3(警告)</div>
+			<div class="myButton" id="btn4">弹窗4(错误)</div>
+			<div class="myButton" id="btn5">弹窗5(成功)</div>
+			<div class="myButton" id="btn6">弹窗6(输入框)</div>
+			<div class="myButton" id="btn7">弹窗7(自定义)</div>
+			<div class="myButton" id="btn8">弹窗8(默认)</div>
+        </center>
+	</body>
+</html>
