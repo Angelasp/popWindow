@@ -2,7 +2,7 @@
 
 popWindow——基于jquery的经典的网页弹框组件。
 
-文档与示例：<https://github.com/Angelcms/popWindow/index.html>
+文档与示例：<https://angelcms.github.io/popWindow/index.html>
 
 
 
